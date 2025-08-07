@@ -15,5 +15,11 @@ yarn setup
 2. Run tests (This runs the tests in headless mode on Chromium only)
 
 ```bash
-yarn bddgen && yarn playwright test
+yarn test
+```
+
+3. Show report of latest run
+
+```bash
+yarn report
 ```

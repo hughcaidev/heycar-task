@@ -1,3 +1,5 @@
+// Contains all steps used in productPage.feature
+
 import { expect } from "@playwright/test"
 import { createBdd } from "playwright-bdd"
 
