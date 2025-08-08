@@ -1,14 +1,18 @@
 {
-  "name": "heycar-technical-assignment",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "Hugh Cai <hughcaidev@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "@cucumber/cucumber": "^12.1.0",
-    "@playwright/test": "^1.54.2",
-    "@types/node": "^24.2.0",
-    "playwright-bdd": "^8.3.1"
-  },
-  "scripts": {}
+    "name": "heycar-technical-assignment",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Hugh Cai <hughcaidev@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@cucumber/cucumber": "^12.1.0",
+        "@playwright/test": "^1.54.2",
+        "@types/node": "^24.2.0",
+        "playwright-bdd": "^8.3.1"
+    },
+    "scripts": {
+        "setup": "yarn install && yarn playwright install",
+        "test": "yarn bddgen && yarn playwright test",
+        "report": "yarn playwright show-report"
+    }
 }

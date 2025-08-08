@@ -1,4 +1,10 @@
 import { defineConfig, devices } from "@playwright/test"
+import { defineBddConfig } from "playwright-bdd"
+
+const testDir = defineBddConfig({
+    features: "features/*.feature",
+    steps: "features/stepDefinitions/*.ts",
+})
 
 /**
  * Read environment variables from file.
@@ -12,7 +18,8 @@ import { defineConfig, devices } from "@playwright/test"
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-    testDir: "./tests",
+    // testDir: "./tests",
+    testDir,
     /* Run tests in files in parallel */
     fullyParallel: true,
     /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -39,15 +46,15 @@ export default defineConfig({
             use: { ...devices["Desktop Chrome"] },
         },
 
-        {
-            name: "firefox",
-            use: { ...devices["Desktop Firefox"] },
-        },
+        // {
+        //     name: "firefox",
+        //     use: { ...devices["Desktop Firefox"] },
+        // },
 
-        {
-            name: "webkit",
-            use: { ...devices["Desktop Safari"] },
-        },
+        // {
+        //     name: "webkit",
+        //     use: { ...devices["Desktop Safari"] },
+        // },
 
         /* Test against mobile viewports. */
         // {
@@ -61,12 +68,12 @@ export default defineConfig({
 
         /* Test against branded browsers. */
         // {
-        //   name: 'Microsoft Edge',
-        //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
+        //     name: "Microsoft Edge",
+        //     use: { ...devices["Desktop Edge"], channel: "msedge" },
         // },
         // {
-        //   name: 'Google Chrome',
-        //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+        //     name: "Google Chrome",
+        //     use: { ...devices["Desktop Chrome"], channel: "chrome" },
         // },
     ],
 
