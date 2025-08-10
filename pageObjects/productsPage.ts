@@ -9,7 +9,7 @@ export class ProductsPage {
 
     // Navigates to the products/shop page
     async goTo() {
-        await this.page.goto("https://demo.nopcommerce.com/camera-photo")
+        await this.page.goto("/camera-photo")
     }
 
     // Click on a product item card
