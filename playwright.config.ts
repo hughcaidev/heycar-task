@@ -3,8 +3,9 @@ import { defineBddConfig } from "playwright-bdd"
 
 const testDir = defineBddConfig({
     features: "features/*.feature",
-    steps: "steps/*.ts",
+    steps: "features/stepDefinitions/*.ts",
 })
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -66,14 +67,14 @@ export default defineConfig({
         // },
 
         /* Test against branded browsers. */
-        {
-            name: "Microsoft Edge",
-            use: { ...devices["Desktop Edge"], channel: "msedge" },
-        },
-        {
-            name: "Google Chrome",
-            use: { ...devices["Desktop Chrome"], channel: "chrome" },
-        },
+        // {
+        //     name: "Microsoft Edge",
+        //     use: { ...devices["Desktop Edge"], channel: "msedge" },
+        // },
+        // {
+        //     name: "Google Chrome",
+        //     use: { ...devices["Desktop Chrome"], channel: "chrome" },
+        // },
     ],
 
     /* Run your local dev server before starting the tests */
