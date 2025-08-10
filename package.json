@@ -12,7 +12,7 @@
     },
     "scripts": {
         "setup": "yarn install && yarn playwright install",
-        "test": "yarn bddgen && yarn playwright test",
+        "test": "yarn bddgen && yarn playwright test && yarn playwright show-report",
         "report": "yarn playwright show-report"
     }
 }
